@@ -66,6 +66,10 @@ smoltcp = { version = "0.12.0", default-features = false, features = [
 critical-section = "1.2.0"
 static_cell      = "2.1.1"
 
+# Reference WiFi implementation
+# $ cargo update -p pokakus
+pokakus = { git = "https://github.com/kolypto/rust-esp32-pokakus" }
+
 
 [profile.dev]
 # Rust debug is too slow.

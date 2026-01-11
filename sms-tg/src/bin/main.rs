@@ -18,6 +18,8 @@ use embassy_time::{
     Timer,
 };
 
+use sms_tg::wifi;
+
 #[allow(clippy::large_stack_frames)]
 #[esp_rtos::main]
 async fn main(spawner: Spawner) -> ! {
@@ -33,11 +35,11 @@ async fn main(spawner: Spawner) -> ! {
     let timg0 = TimerGroup::new(peripherals.TIMG0);
     esp_rtos::start(timg0.timer0, sw_int.software_interrupt0);
 
-    // // Init WiFi & network stack
-    // let stack = defmt::expect!(
-    //     pokakus::wifi::start_wifi(&spawner, peripherals.WIFI).await,
-    //     "Init WiFi"
-    // );
+    // Init WiFi & network stack
+    let stack = defmt::expect!(
+        wifi::start_wifi(&spawner, peripherals.WIFI).await,
+        "Init WiFi"
+    );
 
     // Spawn some tasks
     // spawner.must_spawn(...);

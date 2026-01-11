@@ -1,0 +1,16 @@
+[env]
+# WiFi SSID
+WIFI_SSID=""
+
+# WiFi password
+WIFI_PASS=""
+
+# DHCP Hostname
+DHCP_HOSTNAME="sms-tg"
+
+# Telegram bot token
+# Where: @BotFather
+TELEGRAM_BOT_TOKEN=""
+
+# Send to this chat/channel
+TELEGRAM_SEND_TO=""
